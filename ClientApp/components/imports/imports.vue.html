@@ -1,0 +1,29 @@
+<template>
+    <div>
+        <h1>TEST</h1>
+        <div>Total record: {{ data.length }}</div>
+        <table v-if="data.length" class="table">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>LEVELS</th>
+                    <th>MONEY</th>
+                    <th>TIME</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in data">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.levels }}</td>
+                    <td>{{ item.money }}</td>
+                    <td>{{ item.time|formatDate("DD/MM/YYYY") }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p v-else>
+            <em>Loading...</em>
+        </p>
+    </div>
+</template>
+
+<script src="./imports.ts"></script>
