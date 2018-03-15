@@ -6,7 +6,7 @@ Vue.filter('capitalize', function (value: any) {
     value = value.toString()
     return value.charAt(0).toUpperCase() + value.slice(1)
 });
-Vue.filter('formatDate', function (value: any, format = "MM/DD/YYYY hh:mm") {
+Vue.filter('formatDate', function (value: any, format = "DD/MM/YYYY hh:mm") {
     if (value) {
         return moment(String(value)).format(format)
     }

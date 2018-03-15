@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
         <h1>TEST</h1>
         <div>Total record: {{ data.length }}</div>
@@ -24,6 +24,8 @@
             <em>Loading...</em>
         </p>
     </div>
+</template> -->
+<template>
+    <vuetable ref="vuetable" api-url="api/Imports/GetData" :fields="fields"></vuetable>
 </template>
-
 <script src="./imports.ts"></script>

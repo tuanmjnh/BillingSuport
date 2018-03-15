@@ -11,12 +11,13 @@ namespace BillingSuport.Controllers {
     [Route("api/[controller]")]
     public class ImportsController : Controller {
         [HttpGet("[action]")]
-        public List<Billing.Core.Models.TEST> GetData() {
+        public async Task<IActionResult> GetData(string sort, int page, int per_page) {
             var TMAppSettings = new Common.TMAppSettings();
             var a = TMAppSettings.GetSectionConnectionStrings();
             var sql = new TM.Connection.SQLServer();
-            var rs = sql.Connection.Query<Billing.Core.Models.TEST>("SELECT * FROM TEST ORDER BY LEVELS").ToList();
-            return rs;
+            var data = await sql.Connection.QueryAsync<Billing.Core.Models.TEST>("SELECT * FROM TEST ORDER BY LEVELS");
+            var total = data.Count();
+            return Json(new { total = total, data = data });
         }
     }
 }
