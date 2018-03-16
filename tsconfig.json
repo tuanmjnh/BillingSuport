@@ -12,6 +12,7 @@
       "webpack-env"
     ],
     "strictFunctionTypes": false,
+    "strictPropertyInitialization": false,
     "noImplicitAny": false
   },
   "exclude": [
