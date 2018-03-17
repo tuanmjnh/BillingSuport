@@ -1,8 +1,8 @@
 <template>
     <div>
-        <vuetable ref="vuetable" api-url="https://vuetable.ratiw.net/api/users" :fields="fields" pagination-path=""></vuetable>
+        <vuetable ref="vuetable" api-url="https://vuetable.ratiw.net/api/users" :fields="fields" pagination-path="" @vuetable:pagination-data="onPaginationData"></vuetable>
         <vuetable-pagination-info ref="paginationInfo"></vuetable-pagination-info>
-        <vuetable-pagination ref="pagination"></vuetable-pagination>
+        <vuetable-pagination ref="pagination" @vuetable-pagination:change-page="onChangePage"></vuetable-pagination>
     </div>
 </template>
 <script src="./managertichhop.ts"></script>

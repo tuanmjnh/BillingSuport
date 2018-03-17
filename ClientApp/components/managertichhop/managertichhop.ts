@@ -35,4 +35,12 @@ export default class ImportsComponent extends Vue {
                 'address.line1', 'address.line2', 'address.zipcode']
         }
     }
+    onPaginationData(paginationData) {
+        //Vuetable.VuetablePagination.setPaginationData(paginationData)
+        //this.$refs.pagination.setPaginationData(paginationData)
+    }
+    onChangePage(page) {
+        //Vuetable.vuetable.changePage(page)
+        //this.$refs.pagination.setPaginationData(paginationData)
+    }
 }
